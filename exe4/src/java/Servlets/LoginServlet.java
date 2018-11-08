@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import static util.ConnectionFactory.status;
 
 /**
  *
@@ -95,7 +96,11 @@ public class LoginServlet extends HttpServlet {
 //                out.println("</html>");
             }
             /* TODO output your page here. You may use following sample code. */
-            
+
+        } catch (Exception ex) {
+            //Tentei fazer aparecer o erro do SQL mas não consegui
+            PrintWriter out = response.getWriter();
+            out.println(status);
         }
     }
 
